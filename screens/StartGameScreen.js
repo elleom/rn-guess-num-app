@@ -1,21 +1,23 @@
 import React from "react";
 import { View, Text, StyleSheet, TextInput, Button } from "react-native";
+import Card from '../components/Card.js';
 
 const StartGameScreen = (props) => {
 	return (
 		<View style={styles.screen}>
 			<Text style={styles.title}>Game Start!</Text>
-			<View style={styles.inputContainer}>
+			<Card style={styles.inputContainer}>
 				<Text>Select a number!</Text>
 				<TextInput />
 				<View style={styles.buttongrp}>
 					<Button title='RESET' />
 					<Button title='CONFIRM' />
 				</View>
-			</View>
+			</Card>
 		</View>
 	);
 };
+
 
 const styles = StyleSheet.create({
 	screen: {
@@ -36,18 +38,7 @@ const styles = StyleSheet.create({
 	inputContainer: {
 		width: 300,
 		maxWidth: "80%",
-        alignItems: "center",
-
-		/* the shadow properties work only on IOS */
-        shadowColor: 'black',
-        shadowOpacity: 0.5,
-        shadowOffset: {height: 2, width: 0},
-        shadowRadius: 9,
-
-		/*to do the same i android use the following */
-		elevation: 5,
-		backgroundColor: 'white'
-        
+        alignItems: "center"
 	},
 });
 
