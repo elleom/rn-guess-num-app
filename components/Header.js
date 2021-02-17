@@ -16,11 +16,13 @@ const styles = StyleSheet.create({
         paddingTop: 36,
         backgroundColor: 'red',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        
+        
     },
     headerTitle:{
         color: 'black',
-        fontsize: 18,
+        fontSize: 18,
 
     }
 });
