@@ -1,22 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, Button } from "react-native";
 import Card from "../components/Card.js";
-import Colors from '../constants/colors.js';
+import Colors from "../constants/colors.js";
 import Input from "../components/Input.js";
 
+//validates user's input
 
 const StartGameScreen = (props) => {
+	const [enteredValue, setEnteredValue] = useState("");
+
+	const numberInputHandler = (inputText) => {
+		setEnteredValue(() => {
+			
+		})
+	};
+
 	return (
 		<View style={styles.screen}>
 			<Text style={styles.title}>Game Start!</Text>
 			<Card style={styles.inputContainer}>
 				<Text>Select a number!</Text>
-				<Input style={styles.input} blurOnSubmit keyboardType="number-pad" autoCorrect={false}  text="Open" maxLength={2} />
+				<Input
+					style={styles.input}
+					blurOnSubmit
+					keyboardType='number-pad'
+					autoCorrect={false}
+					text='Open'
+					maxLength={2}
+					onChangeText={numberInputHandler}
+					value={enteredValue}
+				/>
 				<View style={styles.buttongrp}>
-					<View style={styles.button} >
+					<View style={styles.button}>
 						<Button color={Colors.accent} title='RESET' />
 					</View>
-					<View style={styles.button} >
+					<View style={styles.button}>
 						<Button color={Colors.primary} title='CONFIRM' />
 					</View>
 				</View>
@@ -47,13 +65,12 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	button: {
-		width: '40%',	
-		
+		width: "40%",
 	},
 	input: {
 		width: 50,
 		textAlign: "center",
-	}
+	},
 });
 
 export default StartGameScreen;
