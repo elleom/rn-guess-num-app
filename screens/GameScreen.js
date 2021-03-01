@@ -1,10 +1,9 @@
-import React from 'react';
-import { View, StyleSheet, Text} from 'react-native';
+import React, { useEffect } from 'react';
+import { View, StyleSheet, Text, Button, Alert} from 'react-native';
 import {useState} from 'react';
 import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
-import { Button } from 'react-native';
-import { Alert } from 'react-native';
+
 
 //first create a guess (has to be outside the GameScreen component )
 const generateRandomBetween = (min, max, exclude) => {
@@ -24,6 +23,12 @@ const GameScreen = props => {
     const [currentGuess, setCurrentGuess] = useState(generateRandomBetween(1,99, props.usersChoice)); //if state has a value them wont be re-called
     const currentLow = useRef(1);
     const currentHigh = useRef(100);
+
+    useEffect(() => { // use effect behavior, after every render the function gets executed
+        if (currentGuess == props.usersChoice) {
+            
+        }
+    })
     
     
     const nextGuessHandler = direction => {
