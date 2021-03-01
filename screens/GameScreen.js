@@ -5,6 +5,7 @@ import NumberContainer from '../components/NumberContainer';
 import Card from '../components/Card';
 
 
+
 //first create a guess (has to be outside the GameScreen component )
 const generateRandomBetween = (min, max, exclude) => {
     min = Math.ceil(min); //Returns the smallest integer greater than or equal to its numeric argument.
@@ -23,12 +24,15 @@ const GameScreen = props => {
     const [currentGuess, setCurrentGuess] = useState(generateRandomBetween(1,99, props.usersChoice)); //if state has a value them wont be re-called
     const currentLow = useRef(1);
     const currentHigh = useRef(100);
+    const [rounds, setRounds] = useState(0)
 
+    const { usersChoice, onGameOver} = props;
     useEffect(() => { // use effect behavior, after every render the function gets executed
         if (currentGuess == props.usersChoice) {
-            
+            props.onGameOver(rounds);
+
         }
-    })
+    },[currentGuess, usersChoice, onGameOver]);
     
     
     const nextGuessHandler = direction => {
@@ -47,6 +51,7 @@ const GameScreen = props => {
 
         const nextNumber = generateRandomBetween(currentLow, currentHigh, currentGuess);
         setCurrentGuess(nextNumber)
+        setRounds(curRounds => curRounds + 1);
     }
     return (
         <View style={styles.screen}>
