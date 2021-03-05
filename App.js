@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
-import AppLoading from "expo-app-loading";
 import * as Font from "expo-font"; //allows to load fonts
 
 import Header from "./components/Header";
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
 import GameOverScreen from "./screens/GameOverScreen";
-import { AppLoading} from 'expo'; //it is a component
+import AppLoading from 'expo-app-loading' //it is a component
 
 const fetchFont = () => { //loads fonts
 	Font.loadAsync({
@@ -25,7 +24,8 @@ export default function App() {
 		return (< AppLoading 
 			startAsync={fetchFont} 
 			onFinish={() => setDataLoaded(true)} 
-			onError={(err) => console.log(console.log(err))} />) //Important, has to be a prop that retuns a 'promise'
+			onError={(err) => console.log(console.log(err))} />) 
+		}//Important, has to be a prop that retuns a 'promise'
 
 
 	const configureNewGameHandler = () => {
