@@ -124,6 +124,7 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 18,
 		marginVertical: 10,
+		fontFamily: 'open-sans-bold' //this has to match the identifier on App.js (fetch font)
 	},
 	inputContainer: {
 		width: 300,
