@@ -12,6 +12,7 @@ import Card from "../components/Card.js";
 import Colors from "../constants/colors.js";
 import Input from "../components/Input.js";
 import NumberContainer from "../components/NumberContainer";
+import BodyText from "../components/BodyText.js";
 
 //validates user's input
 
@@ -73,9 +74,9 @@ const StartGameScreen = (props) => {
 				Keyboard.dismiss();
 			}}>
 			<View style={styles.screen}>
-				<Text style={styles.title}>Game Start!</Text>
+				<BodyText>Game Start!</BodyText>
 				<Card style={styles.inputContainer}>
-					<Text>Select a number!</Text>
+					<Text style={styles.text}>Select a number!</Text>
 					<Input
 						style={styles.input}
 						blurOnSubmit
@@ -141,7 +142,11 @@ const styles = StyleSheet.create({
 	summaryContainer: {
 		marginTop: 20,
 		alignItems: "center",
+	},
+	text: {
+		fontFamily: 'open-sans'
 	}
+
 	
 });
 
