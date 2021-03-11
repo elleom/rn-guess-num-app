@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Button, Image } from "react-native";
 import TitleText from "../components/TitleText";
 import Colors from "../constants/colors";
 import BodyText from "../components/BodyText";
+import MainButton from "../components/MainButton";
 
 const GameOverScreen = (props) => {
 	return (
@@ -23,7 +24,7 @@ const GameOverScreen = (props) => {
 			<Text>
 				Number was : <Text style={styles.highlight}> {props.userNumber} </Text>
 			</Text>
-			<Button title='RESTART' onPress={props.onRestart} />
+			<MainButton onPress={props.onRestart} >RESTART</MainButton>
 		</View>
 	);
 };
