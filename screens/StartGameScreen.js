@@ -13,6 +13,7 @@ import Colors from "../constants/colors.js";
 import Input from "../components/Input.js";
 import NumberContainer from "../components/NumberContainer";
 import BodyText from "../components/BodyText.js";
+import MainButton from "../components/MainButton";
 
 //validates user's input
 
@@ -61,7 +62,9 @@ const StartGameScreen = (props) => {
 			<Card style={styles.summaryContainer}>
 				<Text>You selected</Text>
 				<NumberContainer>{selectedNum}</NumberContainer>
-				<Button title='START GAME' onPress={() => props.onStartGame(selectedNum) }/>
+				<MainButton onPress={() => props.onStartGame(selectedNum)}>
+					START GAME
+				</MainButton>
 			</Card>
 		); // makes the component visible
 	}
@@ -125,7 +128,7 @@ const styles = StyleSheet.create({
 	title: {
 		fontSize: 18,
 		marginVertical: 10,
-		fontFamily: 'open-sans-bold' //this has to match the identifier on App.js (fetch font)
+		fontFamily: "open-sans-bold", //this has to match the identifier on App.js (fetch font)
 	},
 	inputContainer: {
 		width: 300,
@@ -144,10 +147,8 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	text: {
-		fontFamily: 'open-sans'
-	}
-
-	
+		fontFamily: "open-sans",
+	},
 });
 
 export default StartGameScreen;
