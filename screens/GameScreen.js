@@ -105,9 +105,8 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "space-evenly",
 		marginTop: 20,
-		minWidth: 300,
-		width: "80%",
-		maxWidth: "95%",
+		width: 300,
+		maxWidth: "60%",
 	},
 	listItem: {
 		borderColor: "#ccc",

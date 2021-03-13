@@ -14,6 +14,7 @@ import Input from "../components/Input.js";
 import NumberContainer from "../components/NumberContainer";
 import BodyText from "../components/BodyText.js";
 import MainButton from "../components/MainButton";
+import { Dimensions } from "react-native";
 
 //validates user's input
 
@@ -131,12 +132,14 @@ const styles = StyleSheet.create({
 		fontFamily: "open-sans-bold", //this has to match the identifier on App.js (fetch font)
 	},
 	inputContainer: {
-		width: 300,
-		maxWidth: "80%",
+		width: '80%',
+		minWidth: 300,
+		maxWidth: "95%",
 		alignItems: "center",
 	},
 	button: {
-		width: "40%",
+		width: Dimensions.get("window") // dif for android or iOS, screen is the whole, windows take notice of
+		//width: "40%", 				// the action bar in andorid
 	},
 	input: {
 		width: 50,
