@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	button: {
-		width: Dimensions.get("window") // dif for android or iOS, screen is the whole, windows take notice of
+		width: Dimensions.get("window").width / 4 // dif for android or iOS, screen is the whole, windows take notice of
 		//width: "40%", 				// the action bar in andorid
 	},
 	input: {
